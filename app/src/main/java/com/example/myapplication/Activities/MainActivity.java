@@ -1,6 +1,10 @@
 package com.example.myapplication.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +25,13 @@ private RecyclerView recyclerView;
         setContentView(R.layout.activity_main);
 
         initRecycleView();
+        setVariable();
+    }
+
+    private void setVariable() {
+        TextView next7Btn = findViewById(R.id.nextBtn);
+        next7Btn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, FutureActivity.class)));
+        finish();
     }
 
     private void initRecycleView() {
